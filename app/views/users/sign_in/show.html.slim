@@ -1,1 +1,5 @@
-= link_to 'Sign in', auth_at_provider_path(provider: :github)
+.row
+  .col-md-12
+    = github_aouth_link('Sign in')
+  .col-md-12
+    = link_to 'Sign up', user_sign_up_path, class: %w(btn btn-link btn-block)

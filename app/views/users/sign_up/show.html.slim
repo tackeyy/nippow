@@ -1,1 +1,5 @@
-p Hello
+.row
+  .col-md-12
+    = github_aouth_link('Sign up')
+  .col-md-12
+    = link_to 'Sign in', user_sign_in_path, class: %w(btn btn-link btn-block)

@@ -6,6 +6,7 @@ gem 'therubyracer'
 
 # config
 gem 'dotenv-rails'
+gem 'config'
 
 # UI/UX
 gem 'bootstrap-sass', '~> 3.3.6'
