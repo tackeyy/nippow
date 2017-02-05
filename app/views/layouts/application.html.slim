@@ -1,0 +1,15 @@
+doctype html
+html
+  head
+    title Nippow
+    = stylesheet_link_tag 'application', media: 'all'
+    = javascript_include_tag 'application'
+    = csrf_meta_tags
+  body.skin-black.sidebar-mini.fixed
+    .wrapper
+      = render 'shared/header', user: @user
+      = render 'shared/sidebar', user: @user
+      .content-wrapper
+        section.content
+      #main-menu-bg
+        = yield

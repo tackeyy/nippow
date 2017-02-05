@@ -1,0 +1,16 @@
+doctype html
+html
+  head
+    title AdminLTE 2 | Log in
+    meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport"
+    link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"
+    = stylesheet_link_tag 'application', media: 'all'
+    = csrf_meta_tags
+  body.login-page
+    .login-box
+      .login-logo
+        a href="/"
+          b> Admin
+          | LTE
+      .login-box-body
+         = yield
