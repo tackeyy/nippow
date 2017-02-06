@@ -7,9 +7,9 @@ html
     = csrf_meta_tags
   body.skin-black.sidebar-mini.fixed
     .wrapper
+      = render 'shared/flash'
       = render 'shared/header', user: @user
       = render 'shared/sidebar', user: @user
       .content-wrapper
         section.content
-      #main-menu-bg
-        = yield
+          = yield

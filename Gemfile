@@ -26,6 +26,7 @@ gem 'kaminari'
 
 # Authentication
 gem 'sorcery'
+gem 'octokit', '~> 4.0'
 
 # Database
 gem 'mysql2', '>= 0.3.13', '< 0.5'
@@ -72,6 +73,9 @@ group :development, :test do
 
   # Code analyze
   gem 'rubocop', '~> 0.39'
+
+  # template
+  gem 'rails-admin-scaffold'
 
   # Test
   gem 'factory_girl_rails'

@@ -96,13 +96,13 @@ header.main-header
           /! Menu Toggle Button
           a.dropdown-toggle data-toggle="dropdown" href="#"
             /! The user image in the navbar
-            img.user-image alt=("User Image") src="/assets/user2-160x160.jpg" /
+            = image_tag current_client.user.avatar_url, class: %w(user-image)
             /! hidden-xs hides the username on small devices so only the image appears.
-            span.hidden-xs = current_user.email
+            span.hidden-xs = current_client.user.name
           ul.dropdown-menu
             /! The user image in the menu
             li.user-header
-              img.img-circle alt=("User Image") src="/assets/user2-160x160.jpg" /
+              = image_tag current_client.user.avatar_url, class: %w(img-circle)
               p
                 | Alexander Pierce - Web Developer
                 small Member since Nov. 2012
