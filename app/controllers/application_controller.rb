@@ -18,6 +18,6 @@ class ApplicationController < ActionController::Base
   private
 
   def not_authenticated
-    redirect_to user_sign_in_path
+    redirect_to sign_in_path
   end
 end

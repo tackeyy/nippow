@@ -1,4 +1,4 @@
-class Users::SignInController < ApplicationController
+class SignUpController < ApplicationController
   layout 'auth'
 
   skip_before_action :require_login

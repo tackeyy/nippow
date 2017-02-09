@@ -4,4 +4,8 @@ module ApplicationHelper
       fa_icon 'github 2x', text: text
     end
   end
+
+  def active_if(model)
+    model.name.downcase == controller_name.singularize ? 'active' : ''
+  end
 end

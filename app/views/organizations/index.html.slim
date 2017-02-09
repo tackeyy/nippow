@@ -1,0 +1,19 @@
+.box.box-default
+  .box-header.with-border
+    h4.box-title
+      = Repository.model_name.human
+  .box-body
+    table.table.table-striped
+      thead
+        tr
+          th = "#{Organization.model_name.human}"
+          th
+      tbody
+        - if @organizations.present?
+          - @organizations.each do |organization|
+            tr
+              td = organization.name
+              td = organization.render_create_or_destroy_link
+        - else
+          tr
+            td = "表示する#{Organization.model_name.human}はありません"

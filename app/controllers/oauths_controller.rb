@@ -10,14 +10,14 @@ class OauthsController < ApplicationController
 
     if @user = login_from(provider)
       flash[:notice] = "You have successfully sign in your #{provider.titleize} account."
-      return redirect_to user_path
+      return redirect_to root_url
     end
 
     @user = create_from(provider)
     auto_login(@user)
 
     flash[:notice] = "You have successfully sign in your #{provider.titleize} account."
-    redirect_to user_path
+    redirect_to root_url
   end
 
   def destroy

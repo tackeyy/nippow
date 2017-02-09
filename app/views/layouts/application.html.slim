@@ -6,10 +6,10 @@ html
     = javascript_include_tag 'application'
     = csrf_meta_tags
   body.skin-black.sidebar-mini.fixed
+    = render 'shared/header', user: @user
+    = render 'shared/sidebar', user: @user
     .wrapper
-      = render 'shared/flash'
-      = render 'shared/header', user: @user
-      = render 'shared/sidebar', user: @user
       .content-wrapper
+        = render 'shared/flash'
         section.content
           = yield
