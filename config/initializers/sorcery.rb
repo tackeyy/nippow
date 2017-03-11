@@ -114,8 +114,8 @@ Rails.application.config.sorcery.configure do |config|
   config.github.key = ENV['SORCERY_GITHUB_KEY']
   config.github.secret = ENV['SORCERY_GITHUB_SECRET']
   config.github.callback_url = ENV['SORCERY_GITHUB_CALLBACK_URL']
-  config.github.scope = 'user, repo'
-  config.github.user_info_mapping = { name: 'name', email: 'email', token: 'token' }
+  config.github.scope = ''
+  config.github.user_info_mapping = { name: 'name', email: 'email', token: 'access_token' }
 
   # config.paypal.key = ""
   # config.paypal.secret = ""

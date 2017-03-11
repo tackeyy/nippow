@@ -1,2 +1,6 @@
-h1 使い方
 h1 = "日報 #{Date.current}"
+h2 本日の作業内容
+- if @pulls.present?
+  ul
+    - @pulls.each do |pull|
+      li = pull.title

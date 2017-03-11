@@ -9,7 +9,7 @@ class Repository < ApplicationRecord
     result = []
     repos = all
     github_repos.each do |github_repo|
-      repo = repos.find { |r| r.repo_id == repo.id }
+      repo = repos.find { |r| r.repo_id == github_repo.id }
       result.push(
         new(
           id: repo.try(:id),

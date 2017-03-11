@@ -3,6 +3,20 @@ class Organization < ApplicationRecord
 
   has_many :repositories
 
+  def self.all_with_pulls(current_client)
+    pull_arry = []
+    all.each do |organization|
+      repos = current_client.repos(organization.name)
+      pulls.each do |pull|
+        # next if current_user.name != pull[:user][:login]
+        # ここUTCに合わせる
+        # next if pull[:created_at] > Date.current
+        pull_arry.push(pull)
+      end
+    end
+    pull_arry
+  end
+
   def self.github_organizations(github_organization)
     return [] if github_organization.blank?
 

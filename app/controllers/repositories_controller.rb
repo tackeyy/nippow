@@ -9,6 +9,8 @@ class RepositoriesController < ApplicationController
   # POST /repositories
   def create
     @repository = Repository.new(repository_params)
+
+    @repository.save
     respond_with @repository, location: repositories_url
   end
 
@@ -27,6 +29,6 @@ class RepositoriesController < ApplicationController
 
   # Only allow a trusted parameter "white list" through.
   def repository_params
-    params.permit(:organization_id, :namet)
+    params.permit(:organization_id, :repo_id, :name)
   end
 end

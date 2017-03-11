@@ -13,7 +13,16 @@ class OauthsController < ApplicationController
       return redirect_to root_url
     end
 
-    @user = create_from(provider)
+    sorcery_fetch_user_hash(provider)
+    @user = User.create(
+      name: @user_hash[:user_info]['name'],
+      email: @user_hash[:user_info]['email'],
+      token: @access_token
+    )
+    # @user = create_from(provider)
+    #@user.token = @access_token.token
+    #@user.save
+
     auto_login(@user)
 
     flash[:notice] = "You have successfully sign in your #{provider.titleize} account."
